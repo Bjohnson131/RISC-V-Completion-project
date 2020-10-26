@@ -1,0 +1,7 @@
+Determining compilation order of HDL files.
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Brice/VIVADO/RISC_V_TEST/RISC_V_TEST.sim/sim_1/synth/func/xsim/TEST_TOP_COUNTERS_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity '\CSR_TIMER__28\'
+INFO: [VRFC 10-3107] analyzing entity 'SEL_CLK_DIV'
+INFO: [VRFC 10-3107] analyzing entity 'CSR_TIMER_ARRAY'
+INFO: [VRFC 10-3107] analyzing entity 'CSR_hpmcounter'
+INFO: [VRFC 10-3107] analyzing entity 'TEST_TOP_COUNTERS'

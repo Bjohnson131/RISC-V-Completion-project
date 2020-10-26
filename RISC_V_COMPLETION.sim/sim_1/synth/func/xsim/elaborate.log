@@ -1,0 +1,5 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: G:/xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 8b5bfca9be1148a8bfcd439992618860 --debug all --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TEST_TOP_COUNTERS_func_synth riscy.TEST_TOP_COUNTERS -log elaborate.log 
+Using 2 slave threads.
+ERROR: [XSIM 43-3225] Cannot find design unit riscy.TEST_TOP_COUNTERS in library work located at xsim.dir/work.
