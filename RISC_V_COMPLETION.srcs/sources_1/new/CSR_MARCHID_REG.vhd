@@ -38,7 +38,5 @@ end CSR_MARCHID_REG;
 
 architecture Behavioral of CSR_MARCHID_REG is
 begin
-
     val_out <= X"00000001";
-
 end Behavioral;

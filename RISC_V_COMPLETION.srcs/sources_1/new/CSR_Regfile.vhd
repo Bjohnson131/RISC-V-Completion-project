@@ -35,7 +35,6 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity CSR_Regfile is
 	port (
-	
 	    --REG SIGNALS
 		write_data : in std_logic_vector(31 downto 0);
 		write_address : in std_logic_vector(11 downto 0);
@@ -45,8 +44,8 @@ entity CSR_Regfile is
 		write_control, clock, clear : in std_logic;
 		output_data_0 : out std_logic_vector(31 downto 0);
 		
-		Write_address_1,Write_address_2,Write_address_3 : in std_logic_vector(11 downto 0);
-		Write_val_1,Write_val_2,Write_val_3 : in std_logic_vector(31 downto 0);
+		write_address_1,write_address_2,write_address_3 : in std_logic_vector(11 downto 0) := "000000000000";
+		write_val_1,write_val_2,write_val_3 : in std_logic_vector(31 downto 0) := x"00000000";
 		
 		--CONTROL SIGNALS
         I_ISA_EN : out std_logic

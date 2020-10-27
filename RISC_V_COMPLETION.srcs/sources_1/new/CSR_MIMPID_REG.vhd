@@ -36,7 +36,7 @@ entity CSR_MIMPID_REG is
   );
 end CSR_MIMPID_REG;
 
-architecture Behavioral of CSR_MARCHID_REG is
+architecture Behavioral of CSR_MIMPID_REG is
 begin
 
     val_out <= X"00000002";
