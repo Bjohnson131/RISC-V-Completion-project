@@ -1,3 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"TEST_TOP_COUNTERS_func_impl.vhd" \
