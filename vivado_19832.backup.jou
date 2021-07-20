@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Jul 20 08:57:27 2021
+# Process ID: 19832
+# Current directory: C:/Users/Brice/AppData/Roaming/Xilinx/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17524
+# Log file: C:/Users/Brice/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file: C:/Users/Brice/AppData/Roaming/Xilinx/Vivado\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Brice/git/project_2/project_2.xpr
+update_compile_order -fileset sources_1
+archive_project {C:/Users/Brice/git/RISC-V completion.xpr.zip} -temp_dir C:/Users/Brice/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-19832-DESKTOP-4OG9IDO -force -include_local_ip_cache -include_config_settings

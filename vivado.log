@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Jul 20 09:21:36 2021
+# Process ID: 20612
+# Current directory: C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23804 C:\Users\Brice\Documents\GitHub\RISC-V-Completion-project\project_2.xpr
+# Log file: C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project/vivado.log
+# Journal file: C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project\vivado.jou
+#-----------------------------------------------------------
+start_guioopen_project C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project/project_2.xprWWARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project/project_2.gen/sources_1'.
+Scanning sources...
+Finished scanning sourcesIINFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'.
+open_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:14 . Memory (MB): peak = 1512.496 ; gain = 0.000uupdate_compile_order -fileset sources_1
+exitIINFO: [Common 17-206] Exiting Vivado at Tue Jul 20 09:22:07 2021...
+OG9IDO/PrjAr/_X_/project_2.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 1512.082 ; gain = 0.000
+update_compile_order -fileset sources_1

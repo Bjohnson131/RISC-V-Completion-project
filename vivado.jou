@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Jul 20 09:21:36 2021
+# Process ID: 20612
+# Current directory: C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23804 C:\Users\Brice\Documents\GitHub\RISC-V-Completion-project\project_2.xpr
+# Log file: C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project/vivado.log
+# Journal file: C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project\vivado.jou
+#-----------------------------------------------------------
+start_guioopen_project C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project/project_2.xpruupdate_compile_order -fileset sources_1
