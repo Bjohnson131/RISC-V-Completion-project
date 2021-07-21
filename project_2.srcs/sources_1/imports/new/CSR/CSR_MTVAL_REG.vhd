@@ -39,5 +39,8 @@ architecture Behavioral of CSR_MTVAL_REG is
 
 begin
 
+  -- SR ---
+  -- Is this intentionally empty or just unfinished?
+  -- SR ---
 
 end Behavioral;

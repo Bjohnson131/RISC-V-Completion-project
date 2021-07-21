@@ -94,16 +94,20 @@ begin
 	--	end if;
 	--end process;
 	
+	-- SR ---
+	-- Unequal comparison
+	-- reg_file_read_address_0_ID_EXE is 12 bits, but compared with 5 bit bitstring
+	-- SR ---
 	internal_mux_0_control<=
 	"01" when (
 	(reg_file_write_EX_MEM = '1') and 
 	(reg_file_read_address_0_ID_EXE = reg_file_write_address_EX_MEM) and 
-	(reg_file_read_address_0_ID_EXE /= "00000")
+	(reg_file_read_address_0_ID_EXE /= "000000000000")
 	) else
 	"10" when (
 	(reg_file_write_MEM_WB = '1') and 
 	(reg_file_read_address_0_ID_EXE = reg_file_write_address_MEM_WB) and 
-	(reg_file_read_address_0_ID_EXE /= "00000")
+	(reg_file_read_address_0_ID_EXE /= "000000000000")
 	) else
 	"00" ;
 	forward_mux_0_control <= internal_mux_0_control;

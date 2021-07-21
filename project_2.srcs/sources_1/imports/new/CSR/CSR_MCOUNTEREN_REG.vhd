@@ -1,21 +1,21 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
+-- Company:
+-- Engineer:
+--
 -- Create Date: 05/29/2020 04:07:12 PM
--- Design Name: 
+-- Design Name:
 -- Module Name: CSR_MCOUNTEREN_REG - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
+-- Project Name:
+-- Target Devices:
+-- Tool Versions:
+-- Description:
+--
+-- Dependencies:
+--
 -- Revision:
 -- Revision 0.01 - File Created
 -- Additional Comments:
--- 
+--
 ----------------------------------------------------------------------------------
 
 
@@ -39,5 +39,10 @@ architecture Behavioral of CSR_MCOUNTEREN_REG is
 
 begin
 
+
+
+  -- SR ---
+  -- Is this intentionally empty or just unfinished?
+  -- SR ---
 
 end Behavioral;

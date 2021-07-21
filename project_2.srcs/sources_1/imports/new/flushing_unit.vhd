@@ -16,7 +16,16 @@ architecture behavioural of flushing_unit is
 
 begin
 
-	process (clear, clock, flushing_control, internal_flushing_output) is
+  -- SR ---
+  -- not good practice to have additional signals in process sensitivity list
+  -- in addition to clock.
+  -- Either the process has clock and hence it is a synchronus process
+  -- Or it has no clock and only other signals and is an asynchronus process.
+  -- Not good practise to mix and match
+  -- SR ---
+
+	process (clock) is
+	--process (clear, clock, flushing_control, internal_flushing_output) is
 	begin
 	if(rising_edge(clock)) then
 		if (clear = '1') then

@@ -154,8 +154,12 @@ begin
 	clock=>clock, 
 	mux_sel=>program_counter_mux_sel, 
 	address_in_0=>pc_addr_0, 
-	address_in_1=>JTU_output, 
-	next_address=>PC_next_address, 
+	address_in_1=>JTU_output,
+	-- SR ---
+	--  next_address not in program_counter entity
+	-- instantiation must match entity port names
+	-- SR ---
+	--next_address=>PC_next_address, 
 	address_out=>PC_output);
 	progmem_module_0 : entity riscv.progmem_interface port map(clock=>clock, byte_address=>PC_next_address, output_data=>progmem_output);
 

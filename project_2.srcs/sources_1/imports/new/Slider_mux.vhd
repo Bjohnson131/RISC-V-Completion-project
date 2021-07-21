@@ -31,7 +31,14 @@ end Slider_mux;
 architecture Behavioral of Slider_mux is
 begin
 
-    with selector select 
+  -- SR ---
+  -- This is a pretty big mux
+  -- it seems to be meeting timing with a 100M clock
+  -- but if you plan on increasing the clock rate you may have some trouble
+  -- with it at higher frequencies
+  -- SR ---
+
+    with selector select
     output<=   toSlide(7 downto 0) when x"0000000000000007",
  toSlide(8 downto 1) when x"0000000000000008",
  toSlide(9 downto 2) when x"0000000000000009",

@@ -20,4 +20,8 @@ begin
 
 	output_0 <= internal_output(31 downto 0);
 
+    -- SR ---
+    -- I would usually add an overflow output if internal_output(32) is set
+    -- SR ---
+
 end behavioral;

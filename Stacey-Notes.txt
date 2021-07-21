@@ -1,0 +1,60 @@
+
+----- Missing files in project
+-- Moved reg5b into riscv library
+set_property library riscv [get_files  /media/edata/git/RISC-V-Completion-project/project_2.srcs/sources_1/imports/new/Register/reg5b.vhd]
+
+-- Re-created IP core blk_mem_gen_0
+
+----- Checked timing constraints
+
+-- Commented out unused constraints
+-- No timing constraints specified for input clock
+-- No clock rate specified. Assumed 100M clk.
+-- Added timing constraints and output signal PACKAGE_PINs
+
+# Timing constraints for top level
+set_property PACKAGE_PIN C3 [get_ports sysClk]
+create_clock -period 20.000 -name sysClk -waveform {0.000 10.000} [get_ports sysClk]
+
+set_property PACKAGE_PIN A1 [get_ports led[0]]
+set_property PACKAGE_PIN A2 [get_ports led[1]]
+set_property PACKAGE_PIN A3 [get_ports led[2]]
+set_property PACKAGE_PIN A4 [get_ports led[3]]
+set_property PACKAGE_PIN B1 [get_ports led[4]]
+set_property PACKAGE_PIN B3 [get_ports led[5]]
+set_property PACKAGE_PIN B4 [get_ports led[6]]
+set_property PACKAGE_PIN C1 [get_ports led[7]]
+
+
+------ Processes
+
+-- Checked all processes to ensure only clock was used in sensitivity list of synchronus ones\
+
+   Not good practice to have additional signals in process sensitivity list in addition to clock.
+   Either the process has clock and hence it is a synchronus process
+   Or it has no clock and only other signals and is an asynchronus process.
+   Not good practise to mix and match
+
+-- Moved 'clear' into clocked if statement
+
+   clear signals located inside of process and clock statement
+
+------ Read through Synthesis warnings
+
+-- Delt with inferred latches
+-- Delt with duplicate module warnings
+
+
+------ Other notes
+
+-- There are some very large muxes (eg: Slider_mux). which may pose problems at higher clock rates
+-- Went through all files in repo. Some are empty.
+
+-- Added a testbench (MCU_testbench.vhd) but it seems like there are constructs in controller.vhd that are not compatible with simulation.
+-- (got error: ERROR: [XSIM 43-4187] File "/media/edata/git/RISC-V-Completion-project/project_2.srcs/sources_1/imports/new/controller.vhd" Line 98 : The "Vhdl 2008 Matching Selected Signal Assignment Statement" is not supported yet for simulation. )
+
+-- Synthesis and implementation completes.
+-- Bitstream generation fails due to an iostandard error. I have been unable to find the correct constraints for this board, and have made a forum post:
+https://forums.xilinx.com/t5/Timing-Analysis/Vivado-timing-constraint-files-for-KV260-Starter-Kit/td-p/1267130
+
+Once this has been resolved, it should be trivial to update the constraints.
