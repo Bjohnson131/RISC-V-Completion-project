@@ -39,5 +39,7 @@ architecture Behavioral of CSR_MTVEC_REG is
 
 begin
 
-
+  -- SR ---
+  -- Is this intentionally empty or just unfinished?
+  -- SR ---
 end Behavioral;

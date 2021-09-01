@@ -14,8 +14,9 @@ end datamem;
 architecture behavioural of datamem is
 	type ram_type is array (16384 downto 0) of std_logic_vector (7 downto 0);
 	signal RAM : ram_type;
-begin			   
--- Commented out for now TODO: implement replacement Datamem	
+begin
+-- Commented out for now TODO: implement replacement Datamem
+-- SR I know it's commented, but just a reminder. Process should only have clock.
 --	process (clock, write_enable)
 --	begin
 --		if falling_edge(clock) and write_enable = '1' then

@@ -36,24 +36,26 @@ begin
     input_1                                                                         when (branch = '0' AND operation = "1011")else
     result_temp(31 downto 0)                                                        when (branch = '0') else
     "00000000000000000000000000000000";
-    
-    result_temp <= 
+
+    result_temp <=
     std_logic_vector(signed(input_0(31) & input_0) + signed(input_1(31) & input_1)) when (branch = '0' and operation = "0000")else
     std_logic_vector(signed(input_0(31) & input_0) - signed(input_1(31) & input_1)) when (branch = '0' and operation = "1000")else
     std_logic_vector(signed(input_0(31) & input_0) - signed(input_1(31) & input_1)) when (branch = '0' and operation = "0010")else
     std_logic_vector(unsigned('0' & input_0) - unsigned('0' & input_1))             when (branch = '0' and operation = "0011")else
-    "000000000000000000000000000000000"                                             when (branch = '0') else 
+    "000000000000000000000000000000000"                                             when (branch = '0') else
     std_logic_vector(signed(input_0(31) & input_0) - signed(input_1(31) & input_1)) when (branch = '1' and (ALU_branch_control = "000" or ALU_branch_control = "001" or ALU_branch_control = "100" or ALU_branch_control = "101"))else
     std_logic_vector(unsigned('0' & input_0) - unsigned('0' & input_1)) when (branch = '1' and (ALU_branch_control = "110" or ALU_branch_control = "111"))else
     "000000000000000000000000000000000";
-    
+
     ALU_branch_response <=
     '1' when (
     (ALU_branch_control = "000" and      result_temp = "000000000000000000000000000000000"  ) or
     (ALU_branch_control = "001" and not (result_temp = "000000000000000000000000000000000") ) or
     ((ALU_branch_control = "100" or ALU_branch_control = "110") and (result_temp(32) = '1') ) or
     ((ALU_branch_control = "101" or ALU_branch_control = "111") and (result_temp(32) = '0') ) ) else
-    '0';
+      '0';
+
+
 end architecture Behavioral;
 
 	--process (input_0, input_1, operation, result_temp, branch, ALU_branch_control) is
@@ -142,7 +144,7 @@ end architecture Behavioral;
 						--ALU_output <= X"00000000";
 					--end if;
 
-				--when "0100" => -- xor port 
+				--when "0100" => -- xor port
 					--ALU_output <= input_0 xor input_1;
 
 				--when "0101" => -- shift right logical
@@ -151,10 +153,10 @@ end architecture Behavioral;
 				--when "1101" => --shift right arithmetic
 					--ALU_output <= std_logic_vector(shift_right(signed(input_0), to_integer(unsigned(input_1))));
 
-				--when "0110" => -- or port 
+				--when "0110" => -- or port
 					--ALU_output <= input_0 or input_1;
 
-				--when "0111" => -- and port 
+				--when "0111" => -- and port
 					--ALU_output <= input_0 and input_1;
 
 				--when others => --apenas zera tudo

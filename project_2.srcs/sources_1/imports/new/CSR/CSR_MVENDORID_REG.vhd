@@ -29,10 +29,10 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity CSR_MVENDORID_REG is
-  Port ( 
-  
-  val_out : out std_logic_vector(31 downto 0)  
-  
+  Port (
+
+  val_out : out std_logic_vector(31 downto 0)
+
   );
 end CSR_MVENDORID_REG;
 

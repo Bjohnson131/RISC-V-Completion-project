@@ -46,11 +46,11 @@ begin
     clock(63 downto 32) & unsigned(DATA_IN) when (EN_WRITE_LOW = '1' and EN_WRITE_HIGH = '0') else
     unsigned(DATA_IN) & clock(31 downto 0)  when (EN_WRITE_LOW = '0' and EN_WRITE_HIGH = '1') else
     clock+1;
-    
+
     DATA_LOW_OUT <=
     std_logic_vector(clock(31 downto 0)) when ( EN_OUT_LOW = '1' ) else
     x"00000000";
-    
+
     DATA_HIGH_OUT <=
     std_logic_vector(clock(63 downto 32)) when ( EN_OUT_HIGH = '1' ) else
     x"00000000";

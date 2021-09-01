@@ -45,106 +45,111 @@ end CSR_TIMER_ARRAY;
 architecture Behavioral of CSR_TIMER_ARRAY is
     signal clk_0,ENA_OUT_LOW_0,ENA_OUT_HIGH_0,ENA_WRT_LOW_0,ENA_WRT_HIGH_0: std_logic  := '0';
     signal Dout_LOW_0,Dout_HIGH_0 : std_logic_vector(31 downto 0);
-    
+
     signal clk_1,ENA_OUT_LOW_1,ENA_OUT_HIGH_1,ENA_WRT_LOW_1,ENA_WRT_HIGH_1: std_logic  := '0';
     signal Dout_LOW_1,Dout_HIGH_1 : std_logic_vector(31 downto 0);
 
     signal clk_2,ENA_OUT_LOW_2,ENA_OUT_HIGH_2,ENA_WRT_LOW_2,ENA_WRT_HIGH_2: std_logic  := '0';
     signal Dout_LOW_2,Dout_HIGH_2 : std_logic_vector(31 downto 0);
-    
+
     signal clk_3,ENA_OUT_LOW_3,ENA_OUT_HIGH_3,ENA_WRT_LOW_3,ENA_WRT_HIGH_3: std_logic  := '0';
     signal Dout_LOW_3,Dout_HIGH_3 : std_logic_vector(31 downto 0);
-    
+
     signal clk_4,ENA_OUT_LOW_4,ENA_OUT_HIGH_4,ENA_WRT_LOW_4,ENA_WRT_HIGH_4: std_logic  := '0';
     signal Dout_LOW_4,Dout_HIGH_4 : std_logic_vector(31 downto 0);
-    
+
     signal clk_5,ENA_OUT_LOW_5,ENA_OUT_HIGH_5,ENA_WRT_LOW_5,ENA_WRT_HIGH_5: std_logic  := '0';
     signal Dout_LOW_5,Dout_HIGH_5 : std_logic_vector(31 downto 0);
-    
+
     signal clk_6,ENA_OUT_LOW_6,ENA_OUT_HIGH_6,ENA_WRT_LOW_6,ENA_WRT_HIGH_6: std_logic  := '0';
     signal Dout_LOW_6,Dout_HIGH_6 : std_logic_vector(31 downto 0);
-    
+
     signal clk_7,ENA_OUT_LOW_7,ENA_OUT_HIGH_7,ENA_WRT_LOW_7,ENA_WRT_HIGH_7: std_logic  := '0';
     signal Dout_LOW_7,Dout_HIGH_7 : std_logic_vector(31 downto 0);
-    
+
     signal clk_8,ENA_OUT_LOW_8,ENA_OUT_HIGH_8,ENA_WRT_LOW_8,ENA_WRT_HIGH_8: std_logic  := '0';
     signal Dout_LOW_8,Dout_HIGH_8 : std_logic_vector(31 downto 0);
-    
+
     signal clk_9,ENA_OUT_LOW_9,ENA_OUT_HIGH_9,ENA_WRT_LOW_9,ENA_WRT_HIGH_9: std_logic  := '0';
     signal Dout_LOW_9,Dout_HIGH_9 : std_logic_vector(31 downto 0);
-    
+
     signal clk_10,ENA_OUT_LOW_10,ENA_OUT_HIGH_10,ENA_WRT_LOW_10,ENA_WRT_HIGH_10: std_logic  := '0';
     signal Dout_LOW_10,Dout_HIGH_10 : std_logic_vector(31 downto 0);
-    
+
     signal clk_11,ENA_OUT_LOW_11,ENA_OUT_HIGH_11,ENA_WRT_LOW_11,ENA_WRT_HIGH_11: std_logic  := '0';
     signal Dout_LOW_11,Dout_HIGH_11 : std_logic_vector(31 downto 0);
-    
+
     signal clk_12,ENA_OUT_LOW_12,ENA_OUT_HIGH_12,ENA_WRT_LOW_12,ENA_WRT_HIGH_12: std_logic  := '0';
     signal Dout_LOW_12,Dout_HIGH_12 : std_logic_vector(31 downto 0);
-    
+
     signal clk_13,ENA_OUT_LOW_13,ENA_OUT_HIGH_13,ENA_WRT_LOW_13,ENA_WRT_HIGH_13: std_logic  := '0';
     signal Dout_LOW_13,Dout_HIGH_13 : std_logic_vector(31 downto 0);
-    
+
     signal clk_14,ENA_OUT_LOW_14,ENA_OUT_HIGH_14,ENA_WRT_LOW_14,ENA_WRT_HIGH_14: std_logic  := '0';
     signal Dout_LOW_14,Dout_HIGH_14 : std_logic_vector(31 downto 0);
-    
+
     signal clk_15,ENA_OUT_LOW_15,ENA_OUT_HIGH_15,ENA_WRT_LOW_15,ENA_WRT_HIGH_15: std_logic  := '0';
     signal Dout_LOW_15,Dout_HIGH_15 : std_logic_vector(31 downto 0);
-    
+
     signal clk_16,ENA_OUT_LOW_16,ENA_OUT_HIGH_16,ENA_WRT_LOW_16,ENA_WRT_HIGH_16: std_logic  := '0';
     signal Dout_LOW_16,Dout_HIGH_16 : std_logic_vector(31 downto 0);
-    
+
     signal clk_17,ENA_OUT_LOW_17,ENA_OUT_HIGH_17,ENA_WRT_LOW_17,ENA_WRT_HIGH_17: std_logic  := '0';
     signal Dout_LOW_17,Dout_HIGH_17 : std_logic_vector(31 downto 0);
-    
+
     signal clk_18,ENA_OUT_LOW_18,ENA_OUT_HIGH_18,ENA_WRT_LOW_18,ENA_WRT_HIGH_18: std_logic  := '0';
     signal Dout_LOW_18,Dout_HIGH_18 : std_logic_vector(31 downto 0);
-    
+
     signal clk_19,ENA_OUT_LOW_19,ENA_OUT_HIGH_19,ENA_WRT_LOW_19,ENA_WRT_HIGH_19: std_logic  := '0';
     signal Dout_LOW_19,Dout_HIGH_19 : std_logic_vector(31 downto 0);
-    
+
     signal clk_20,ENA_OUT_LOW_20,ENA_OUT_HIGH_20,ENA_WRT_LOW_20,ENA_WRT_HIGH_20: std_logic  := '0';
     signal Dout_LOW_20,Dout_HIGH_20 : std_logic_vector(31 downto 0);
-    
+
     signal clk_21,ENA_OUT_LOW_21,ENA_OUT_HIGH_21,ENA_WRT_LOW_21,ENA_WRT_HIGH_21: std_logic  := '0';
     signal Dout_LOW_21,Dout_HIGH_21 : std_logic_vector(31 downto 0);
-    
+
     signal clk_22,ENA_OUT_LOW_22,ENA_OUT_HIGH_22,ENA_WRT_LOW_22,ENA_WRT_HIGH_22: std_logic  := '0';
     signal Dout_LOW_22,Dout_HIGH_22 : std_logic_vector(31 downto 0);
-    
+
     signal clk_23,ENA_OUT_LOW_23,ENA_OUT_HIGH_23,ENA_WRT_LOW_23,ENA_WRT_HIGH_23: std_logic  := '0';
     signal Dout_LOW_23,Dout_HIGH_23 : std_logic_vector(31 downto 0);
-    
+
     signal clk_24,ENA_OUT_LOW_24,ENA_OUT_HIGH_24,ENA_WRT_LOW_24,ENA_WRT_HIGH_24: std_logic  := '0';
     signal Dout_LOW_24,Dout_HIGH_24 : std_logic_vector(31 downto 0);
-    
+
     signal clk_25,ENA_OUT_LOW_25,ENA_OUT_HIGH_25,ENA_WRT_LOW_25,ENA_WRT_HIGH_25: std_logic  := '0';
     signal Dout_LOW_25,Dout_HIGH_25 : std_logic_vector(31 downto 0);
-    
+
     signal clk_26,ENA_OUT_LOW_26,ENA_OUT_HIGH_26,ENA_WRT_LOW_26,ENA_WRT_HIGH_26: std_logic  := '0';
     signal Dout_LOW_26,Dout_HIGH_26 : std_logic_vector(31 downto 0);
-    
+
     signal clk_27,ENA_OUT_LOW_27,ENA_OUT_HIGH_27,ENA_WRT_LOW_27,ENA_WRT_HIGH_27: std_logic  := '0';
     signal Dout_LOW_27,Dout_HIGH_27 : std_logic_vector(31 downto 0);
-    
+
     signal clk_28,ENA_OUT_LOW_28,ENA_OUT_HIGH_28,ENA_WRT_LOW_28,ENA_WRT_HIGH_28: std_logic  := '0';
     signal Dout_LOW_28,Dout_HIGH_28 : std_logic_vector(31 downto 0);
-    
+
     signal clk_29,ENA_OUT_LOW_29,ENA_OUT_HIGH_29,ENA_WRT_LOW_29,ENA_WRT_HIGH_29: std_logic  := '0';
     signal Dout_LOW_29,Dout_HIGH_29 : std_logic_vector(31 downto 0);
-    
+
     signal clk_30,ENA_OUT_LOW_30,ENA_OUT_HIGH_30,ENA_WRT_LOW_30,ENA_WRT_HIGH_30: std_logic  := '0';
     signal Dout_LOW_30,Dout_HIGH_30 : std_logic_vector(31 downto 0);
-    
+
     signal clk_31,ENA_OUT_LOW_31,ENA_OUT_HIGH_31,ENA_WRT_LOW_31,ENA_WRT_HIGH_31: std_logic  := '0';
     signal Dout_LOW_31,Dout_HIGH_31 : std_logic_vector(31 downto 0);
 
     signal out_low,out_high : std_logic_vector(31 downto 0);
- 
+
 begin
 
 D_OUT_LOW <= out_low;
 D_OUT_HIGH<= out_high;
+
+-- SR ---
+-- Why duplicate the clock signal so many times?
+-- What's the goal here?
+-- SR ---
 
 clk_0 <= clk;
 clk_1 <= clk;
