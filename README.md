@@ -122,13 +122,13 @@ TEST_TOP_COUNTERS.vhd
  - [ ] Genericise a Nx1 mux
  - [ ] Genericise a NxN mux  
 
-Current files: 
-Mux/mux_2_1.vhd
-Mux/mux_32_1.vhd
-Mux/mux_32_32.vhd
-Mux/mux_3_1.vhd
-Mux/mux_4_1.vhd
-Mux/mux_5_1.vhd
+Current files:   
+Mux/mux_2_1.vhd  
+Mux/mux_32_1.vhd  
+Mux/mux_32_32.vhd  
+Mux/mux_3_1.vhd  
+Mux/mux_4_1.vhd  
+Mux/mux_5_1.vhd  
 
 #### Registers
 ---
@@ -137,15 +137,16 @@ Mux/mux_5_1.vhd
  - [ ] Genericise an n-bit mux
  - [ ] Genericise an n-bit mux on any type of change    
  
-Current files: 
-Register/reg12b.vhd
-Register/reg1b.vhd
-Register/reg2b.vhd
-Register/reg32b.vhd
-Register/reg32b_falling_edge.vhd
-Register/reg3b.vhd
-Register/reg4b.vhd
-Register/reg5b.vhd
+Current files:   
+Register/reg12b.vhd  
+Register/reg1b.vhd  
+Register/reg2b.vhd  
+Register/reg32b.vhd  
+Register/reg32b_falling_edge.vhd  
+Register/reg3b.vhd  
+Register/reg4b.vhd  
+Register/reg5b.vhd  
+
 #### Staging
 ---
  - [ ] Triage
@@ -154,12 +155,12 @@ Register/reg5b.vhd
  - [ ] Define basic operations of instructions.  
  
 Current files: 
-Stage/EX_MEM_DIV.vhd
-Stage/EX_STAGE.vhd
-Stage/ID_EX_DIV.vhd
-Stage/ID_STAGE.vhd
-Stage/IF_ID_DIV.vhd
-Stage/IF_STAGE.vhd
-Stage/MEM_STAGE.vhd
-Stage/MEM_WB_DIV.vhd
-Stage/WB_STAGE.vhd
+Stage/EX_MEM_DIV.vhd  
+Stage/EX_STAGE.vhd  
+Stage/ID_EX_DIV.vhd  
+Stage/ID_STAGE.vhd  
+Stage/IF_ID_DIV.vhd  
+Stage/IF_STAGE.vhd  
+Stage/MEM_STAGE.vhd  
+Stage/MEM_WB_DIV.vhd  
+Stage/WB_STAGE.vhd  
