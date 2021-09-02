@@ -1,3 +1,4 @@
+*.log
 RISC_V_COMPLETION.runs/*
 RISC_V_COMPLETION.sim/*
 RISC_V_COMPLETION.cache/*

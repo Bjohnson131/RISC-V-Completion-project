@@ -10,3 +10,5 @@
 # Journal file: C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project\vivado.jou
 #-----------------------------------------------------------
 start_guioopen_project C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project/project_2.xpruupdate_compile_order -fileset sources_1
+write_project_tcl -all_properties -dump_project_info {C:/Users/Brice/git/project_2.tcl}
+write_project_tcl -all_properties -dump_project_info -verbose {C:/Users/Brice/project_2.tcl}
