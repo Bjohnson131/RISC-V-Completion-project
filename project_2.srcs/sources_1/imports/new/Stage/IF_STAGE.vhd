@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Brice Johnson
 -- 
 -- Create Date: 05/22/2020 04:09:13 PM
 -- Design Name: 
@@ -21,10 +21,11 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
 library riscv;
 use riscv.progmem_interface;
 use riscv.program_counter;
-use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -33,19 +34,24 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity IF_STAGE is
   Port (
+  --INPUT
+  
+  --EX SIGNALS
+  -- TODO-3: Change this to custom 'address' type.
+  JTU_output : in Std_logic_vector(31 downto 0);
+  
+  --MEM SIGNALS
+  flushing_unit_output : in std_logic;
+  
   --SYSTEM SIGNALS
   clock,reset: in std_logic;
   
   --OUTPUT
-  instruction_address_IF_ID: out std_logic_vector(31 downto 0);
-  instruction: out std_logic_vector(31 downto 0);
-  
-  --EX SIGNALS
-  JTU_output : in Std_logic_vector(31 downto 0);
-  
-  --MEM SIGNALS
-  flushing_unit_output : in std_logic
-   );
+  -- TODO-2: Change this to custom 'address' type.
+  instruction_address: out std_logic_vector(31 downto 0);
+  -- TODO-1: Change this to custom 'instruction' type.
+  instruction: out std_logic_vector(31 downto 0)
+  );
 end IF_STAGE;
 
 architecture Behavioral of IF_STAGE is
@@ -86,7 +92,7 @@ IF_ID_PLR: entity riscv.IF_ID_DIV(behavioral) port map(
     clear=>program_counter_mux_sel,                         
     instruction_address_in=>PC_output,                      
     instruction_data_in=>progmem_output,                    
-    instruction_address_out=>instruction_address_IF_ID,     
+    instruction_address_out=>instruction_address,     
     instruction_data_out=>instruction
     );
 

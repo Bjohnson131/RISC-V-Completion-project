@@ -31,29 +31,39 @@ entity ID_STAGE is
   clock,reset: in std_logic;
   
   --OUTPUTS
+
+  -- TODO-7: Put this CSR stuff into its own module
   --register_file_output_0: out std_logic_vector(31 downto 0);
   --register_file_output_1: out std_logic_vector(31 downto 0);
   --CSR_File_read_addr : out std_logic_vector(11 downto 0);
+  CSR_file_read_address_0_out : out std_logic_vector(11 downto 0); 
+  CSR_file_output_1_out : out std_logic_vector(31 downto 0);
+  csr_file_write_out : out std_logic;
+
+  -- TODO-8: Put this regfile stuff into its own module
+  reg_file_write_out : out std_logic;
+  reg_file_write_address_out : out std_logic_vector(4 downto 0);
+  register_file_read_address_0_out : out std_logic_vector(4 downto 0);
+  register_file_read_address_1_out : out std_logic_vector(4 downto 0);
+  register_file_output_0_out : out std_logic_vector(31 downto 0);
+  register_file_output_1_out : out std_logic_vector(31 downto 0);
+
+  -- TODO-5: Change this to custom 'ALU operation' type.
   ALU_operation_out : out std_logic_vector(3 downto 0);
   ALU_branch_out : out std_logic;
   ALU_branch_control_out : out std_logic_vector(2 downto 0);
+
+  -- TODO-6: WTF ARE THESE?!?
   mux1_sel_out : out std_logic_vector(1 downto 0);
+  mux0_sel_out : out std_logic_vector(1 downto 0);
+
   JTU_mux_sel_out : out std_logic;
   data_format_out : out std_logic_vector(2 downto 0);
   datamem_write_out : out std_logic;
   jump_flag_out : out std_logic;
-  mux0_sel_out : out std_logic_vector(1 downto 0);
-  reg_file_write_out : out std_logic;
-  csr_file_write_out : out std_logic;
-  reg_file_write_address_out : out std_logic_vector(4 downto 0);
-  register_file_read_address_0_out : out std_logic_vector(4 downto 0);
-  register_file_read_address_1_out : out std_logic_vector(4 downto 0);
-  CSR_file_read_address_0_out : out std_logic_vector(11 downto 0);
-  register_file_output_0_out : out std_logic_vector(31 downto 0);
-  register_file_output_1_out : out std_logic_vector(31 downto 0);
+
   immediate_out : out std_logic_vector(31 downto 0);
-  instruction_address_out : out std_logic_vector(31 downto 0); 
-  CSR_file_output_1_out : out std_logic_vector(31 downto 0);
+  instruction_address_out : out std_logic_vector(31 downto 0);
   
   
   --FETCH SIGNALS
@@ -61,6 +71,8 @@ entity ID_STAGE is
   instruction: in std_logic_vector(31 downto 0);
   
   --WB SIGNALS
+
+  -- TODO-4: Change this to its own module
   mux_0_output : in std_logic_vector(31 downto 0);
   reg_file_write_address_MEM_WB : in std_logic_vector(4 downto 0);
   CSR_File_write_data_MEM_WB : in std_logic_vector(31 downto 0);
@@ -74,9 +86,7 @@ entity ID_STAGE is
   debug_regfile_x31_output : out std_logic_vector(31 downto 0);
   debug_regfile_x1_output : out std_logic_vector(31 downto 0);
   debug_regfile_x2_output : out std_logic_vector(31 downto 0)
-  
-  
-   );
+  );
 end ID_STAGE;
 
 architecture Behavioral of ID_STAGE is
@@ -137,7 +147,6 @@ begin
 	mux0_sel=>mux0_sel, 
 	mux1_sel=>mux1_sel);
 	
-	--TODO: Take out Register File
 	register_file_0 : entity riscv.register_file port map(
 	write_data=>mux_0_output, 
 	write_address=>reg_file_write_address_MEM_WB, 
@@ -153,7 +162,6 @@ begin
 	debug_x2_output=>debug_regfile_x2_output
 	);	
 	
-	--TODO: Take out CSR
 	CSR : entity riscv.CSR_Regfile port map(
 	clock=> clock,
 	clear=>reset,	

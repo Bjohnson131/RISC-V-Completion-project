@@ -153,8 +153,16 @@ Register/reg5b.vhd
  - [ ] Turn instructions into data types
  - [ ] Put instructions into a new library
  - [ ] Define basic operations of instructions.  
+ - [ ] TODO-1: Change instruction output signal to custom type in IF_STAGE.vhd
+ - [ ] TODO-2: Change output to custom 'address' type in IF_STAGE.vhd.
+ - [ ] TODO-3: Change input to custom 'address' type in IF_STAGE.vhd.
+ - [ ] TODO-4: Remove the CSR writing logic from ID_STAGE.vhd, and put into its own module.
+ - [ ] TODO-5: Change ID_STAGE ALU signals to custom type, and move type to its own module.
+ - [ ] TODO-6: Give the mux sel signals a better name in ID_STAGE.
+ - [ ] TODO-7: in ID_STAGE move the CSR memory items into their own module.
+ - [ ] TODO-8: Do the same as TODO-7, but for the regfiles instead of CSR.
  
-Current files: 
+Current files:   
 Stage/EX_MEM_DIV.vhd  
 Stage/EX_STAGE.vhd  
 Stage/ID_EX_DIV.vhd  

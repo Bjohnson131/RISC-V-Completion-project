@@ -181,7 +181,7 @@ debug_instruction  <= instruction  ;
  reset => reset,
  
  --Output to ID
- instruction_address_IF_ID=>instruction_address_IF_ID,
+ instruction_address=>instruction_address_IF_ID,
  instruction=>instruction,
  
  --Input from Execution stage

@@ -28,31 +28,10 @@ constant ones : std_logic := '1';
 attribute keep_hierarchy : string;
 attribute keep_hierarchy of behavioral : architecture is "yes";
 
-	--INTERNAL SIGNALS
-
-	--Data
-	signal instruction_address_input_signal : std_logic_vector(31 downto 0);
-	signal instruction_data_input_signal : std_logic_vector(31 downto 0);
-
-	--Data
-	signal instruction_address_output_signal : std_logic_vector(31 downto 0);
-	signal instruction_data_output_signal : std_logic_vector(31 downto 0);
-
 begin
 
 	--INTERNAL REGISTERS
-
-	--Data
-	instruction_address_reg : entity riscv.reg32b port map(reg_in=>instruction_address_input_signal, load=>ones, clock=>clock, clear=>clear, reg_out=>instruction_address_output_signal);
-	instruction_data_reg : entity riscv.reg32b port map(reg_in=>instruction_data_input_signal, load=>ones, clock=>clock, clear=>clear, reg_out=>instruction_data_output_signal);
-
-	--WIRING OUTPUT PORTS
-
-	--Data
-	instruction_address_out <= instruction_address_output_signal;
-	instruction_data_out <= instruction_data_output_signal;
-
-	instruction_address_input_signal <= instruction_address_in;
-	instruction_data_input_signal <= instruction_data_in;
+	instruction_address_reg : entity riscv.reg32b port map(reg_in=>instruction_address_in, load=>ones, clock=>clock, clear=>clear, reg_out=>instruction_address_out);
+	instruction_data_reg : entity riscv.reg32b port map(reg_in=>instruction_data_in, load=>ones, clock=>clock, clear=>clear, reg_out=>instruction_data_out);
 
 end behavioral;

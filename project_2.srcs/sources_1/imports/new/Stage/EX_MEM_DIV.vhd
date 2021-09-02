@@ -7,8 +7,7 @@ use riscv.all;
 
 entity EX_MEM_DIV is
 	port (
-		--INPUTS
-
+		--INPUTS--
 		clock, clear : in std_logic;
 
 		--MEM control signals
@@ -29,7 +28,7 @@ entity EX_MEM_DIV is
 		ALU_branch_response_in : in std_logic;
 		instruction_address_in : in std_logic_vector(31 downto 0);
 
-		--OUTPUTS
+		--OUTPUTS--
 
 		--MEM control signals
 		data_format_out : out std_logic_vector(2 downto 0);
