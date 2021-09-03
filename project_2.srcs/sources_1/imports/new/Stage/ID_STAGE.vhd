@@ -174,7 +174,8 @@ begin
 	write_control=>CSR_file_write_MEM_WB	
 	);
 
-OUT_PLR : entity riscv.ID_EX_DIV port map(
+
+	DIVIDER : entity riscv.ID_EX_DIV port map(
 	 --System Things--
 	 clock=>clock,
 	 clear=>'0', 

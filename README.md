@@ -161,7 +161,15 @@ Register/reg5b.vhd
  - [ ] TODO-6: Give the mux sel signals a better name in ID_STAGE.
  - [ ] TODO-7: in ID_STAGE move the CSR memory items into their own module.
  - [ ] TODO-8: Do the same as TODO-7, but for the regfiles instead of CSR.
- 
+ - [ ] TODO-9: More thouroughly define what each stage does, make definitions.
+ - [ ] TODO-10: Make 'operation' into an enum or something int EX_STAGE and ALU.
+ - [x] TODO-11: Invert logic such that we don't have to use branch=0 on every line inside ALU
+ - [ ] TODO-12: Test TODO-12 with a test bed
+ - [ ] TODO-13: Change 'branch_control' in ALU to an enum or other custom type and propogate the type through other stages.
+ - [ ] TODO-14: find out why we're duplicating the last bit of some ALU operations
+ - [ ] TODO-15: Fix the EX_STAGE Signal names
+
+
 Current files:   
 Stage/EX_MEM_DIV.vhd  
 Stage/EX_STAGE.vhd  

@@ -1,3 +1,26 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date: 05/22/2020 04:09:13 PM
+-- Design Name: 
+-- Module Name: jump_target_unit - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+--   Takes in all addresses to select from, a mux sel signal,
+--   and an immediate to add to the mux output, and outputs the
+--   address that the processor should jump to if any.
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -18,6 +41,14 @@ end jump_target_unit;
 architecture behavioral of jump_target_unit is
 	signal mux_output : std_logic_vector (31 downto 0) := X"00000000";
 begin
-	internal_mux : entity riscv.mux_2_1 port map(mux_sel, current_instruction_address, regfile_address, mux_output);
-	internal_adder : entity riscv.adder port map(mux_output, immediate, target_address);
+	internal_mux : entity riscv.mux_2_1 port map(
+		selection=>mux_sel, 
+		input_0  =>current_instruction_address, 
+		input_1  =>regfile_address, 
+		output_0 =>mux_output);
+
+	internal_adder : entity riscv.adder port map(
+		input_0 =>mux_output, 
+		input_1 =>immediate, 
+		output_0=>target_address);
 end behavioral;
