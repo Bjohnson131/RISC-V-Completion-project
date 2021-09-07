@@ -168,6 +168,11 @@ Register/reg5b.vhd
  - [ ] TODO-13: Change 'branch_control' in ALU to an enum or other custom type and propogate the type through other stages.
  - [ ] TODO-14: find out why we're duplicating the last bit of some ALU operations
  - [ ] TODO-15: Fix the EX_STAGE Signal names
+ - [ ] TODO-16: Implement CSRRCI
+ - [ ] TODO-17: Implement CSRRSI
+ - [ ] TODO-18: Implement CSRRWI
+ - [ ] TODO-19: change the internal CSR_OP to an enum
+ - [ ] TODO-20: figure out a better way to implement CSR signals.
 
 
 Current files:   

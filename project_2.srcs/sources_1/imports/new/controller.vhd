@@ -199,13 +199,14 @@ current_state_out <=
        "10" when HYPERVISOR,
        "11" when MACHINE;
 
+-- TODO-19:  Change this to an enum
 internal_ALU_OP_SYSTEM <=
        "1001" when(next_decoded_opcode = CSRRC)else
        "0110" when(next_decoded_opcode = CSRRS)else
        "1011" when(next_decoded_opcode = CSRRW)else
-       "1001" when(next_decoded_opcode = CSRRCI)else--IMPLEMENT--
-       "0110" when(next_decoded_opcode = CSRRSI)else--IMPLEMENT--
-       "1011" when(next_decoded_opcode = CSRRWI)else--IMPLEMENT--
+       "1001" when(next_decoded_opcode = CSRRCI)else--TODO-16: IMPLEMENT--
+       "0110" when(next_decoded_opcode = CSRRSI)else--TODO-17: IMPLEMENT--
+       "1011" when(next_decoded_opcode = CSRRWI)else--TODO-18: IMPLEMENT--
        "0000";
 
 --/-----------------------------\
@@ -254,6 +255,7 @@ csr_file_read_address_0 <=
         fetched_instruction(31 downto 20) when SYSTEM,
         "000000000000"                    when others;
 
+-- TODO-20: figure out a better way to implement CSR signals.
 with decoded_cluster select
 CSR_file_write <=
        '1' when SYSTEM,
