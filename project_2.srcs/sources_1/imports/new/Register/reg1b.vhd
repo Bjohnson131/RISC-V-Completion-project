@@ -12,10 +12,16 @@ end reg1b;
 architecture description of reg1b is
   signal internal_value : std_logic := '0';
 
-  -- SR: Why keep_hierarchy?
+  -- SR: Why DONT_TOUCH?
 
-  attribute keep_hierarchy                : string;
-  attribute keep_hierarchy of description : architecture is "yes";
+  attribute extract_reset : string;
+  attribute extract_enable : string;
+  attribute extract_reset of reg_out: signal is "no";
+  attribute extract_enable of reg_out: signal is "no";
+  attribute gated_clock               : string;
+  attribute gated_clock of clock      : signal is "true";
+  attribute dont_touch                : string;
+  attribute dont_touch of description : architecture is "true";
 begin
 
 

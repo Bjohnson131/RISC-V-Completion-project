@@ -23,7 +23,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 library riscv;
-use riscv.controller;			   		   
+use riscv.all;			   		   
 
 entity ID_STAGE is
  Port (
@@ -54,7 +54,7 @@ entity ID_STAGE is
   ALU_branch_control_out : out std_logic_vector(2 downto 0);
 
   -- TODO-6: WTF ARE THESE?!?
-  mux1_sel_out : out std_logic_vector(1 downto 0);
+  mux1_sel_out : out types.MEMORY_MUX_SEL;
   mux0_sel_out : out std_logic_vector(1 downto 0);
 
   JTU_mux_sel_out : out std_logic;
@@ -106,7 +106,7 @@ architecture Behavioral of ID_STAGE is
 	signal datamem_write : std_logic;
 	signal jump_flag : std_logic;
 	signal mux0_sel : std_logic_vector(1 downto 0);
-	signal mux1_sel : std_logic_vector(1 downto 0);
+	signal mux1_sel : types.MEMORY_MUX_SEL;
 	
 	
 	signal CSR_File_read_addr_OUT : std_logic_vector(11 downto 0);
@@ -120,7 +120,6 @@ begin
 
     --register_file_output_1_out <= register_file_output_internal_1;
     --register_file_output_0_out <= register_file_output_internal_0;
-    CSR_file_read_address_0_out <= CSR_File_read_addr_internal;
     debug_reg_file_read_address_0 <= reg_file_read_address_0;
     debug_reg_file_read_address_1 <= reg_file_read_address_1;
 
@@ -225,7 +224,7 @@ begin
 	 reg_file_write_address_out=>reg_file_write_address_OUT, 	 
 	 register_file_read_address_0_out=>register_file_read_address_0_OUT, 
 	 register_file_read_address_1_out=>register_file_read_address_1_OUT, 
-	 CSR_file_read_address_0_out=>CSR_File_read_addr_OUT,	 
+	 CSR_file_read_address_0_out=>CSR_file_read_address_0_out,	 
 	 register_file_output_0_out=>register_file_output_0_OUT, 
 	 register_file_output_1_out=>register_file_output_1_OUT, 
 	 immediate_out=>immediate_OUT, 

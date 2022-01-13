@@ -17,8 +17,8 @@ entity datamem_interface is
 end entity datamem_interface;
 
 architecture behavioural of datamem_interface is
-    attribute keep_hierarchy : string;
-    attribute keep_hierarchy of behavioural : architecture is "yes";
+    attribute DONT_TOUCH : string;
+    attribute DONT_TOUCH of behavioural : architecture is "true";
 
 	signal internal_load : std_logic_vector(3 downto 0);
 	
@@ -39,18 +39,18 @@ architecture behavioural of datamem_interface is
 
 begin
 	
-    blockRam_mem: blk_mem_gen_0 
-    port map(
-    clka=>clock, 
-    --rsta=>'0', 
-    ena=>'1',
-    wea(0)=>internal_load(0),
-    wea(1)=>internal_load(1),
-    wea(2)=>internal_load(2),
-    wea(3)=>internal_load(3), 
-    addra=>membank_address(16 downto 0), 
-    dina=>input_data, 
-    douta=>output_data);
+    --blockRam_mem: blk_mem_gen_0 
+    --port map(
+    --clka=>clock, 
+    ----rsta=>'0', 
+    --ena=>'1',
+    --wea(0)=>internal_load(0),
+    --wea(1)=>internal_load(1),
+    --wea(2)=>internal_load(2),
+    --wea(3)=>internal_load(3), 
+    --addra=>membank_address(16 downto 0), 
+    --dina=>input_data, 
+    --douta=>output_data);
     
     membank_address <= "00"&byte_address(31 downto 2);
     byte_starting_position <= byte_address(1 downto 0);

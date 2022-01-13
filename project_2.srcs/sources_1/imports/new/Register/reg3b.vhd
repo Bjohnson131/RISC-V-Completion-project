@@ -10,9 +10,11 @@ entity reg3b is
 end reg3b;
 
 architecture description of reg3b is
-  signal internal_value                   : std_logic_vector(2 downto 0) := "000";
-  attribute keep_hierarchy                : string;
-  attribute keep_hierarchy of description : architecture is "yes";
+  signal internal_value               : std_logic_vector(2 downto 0) := "000";
+  attribute gated_clock               : string;
+  attribute gated_clock of clock      : signal is "true";
+  attribute dont_touch                : string;
+  attribute dont_touch of description : architecture is "true";
 begin
 
 

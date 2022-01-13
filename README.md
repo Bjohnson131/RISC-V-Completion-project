@@ -134,8 +134,8 @@ Mux/mux_5_1.vhd
 ---
  - [x] Triage
  - [ ] Use generics instead of lots of files.
- - [ ] Genericise an n-bit mux
- - [ ] Genericise an n-bit mux on any type of change    
+ - [ ] Genericise an n-bit reg
+ - [ ] Genericise an n-bit reg on any type of change    
  
 Current files:   
 Register/reg12b.vhd  
@@ -173,6 +173,7 @@ Register/reg5b.vhd
  - [ ] TODO-18: Implement CSRRWI
  - [ ] TODO-19: change the internal CSR_OP to an enum
  - [ ] TODO-20: figure out a better way to implement CSR signals.
+ - [ ] TODO-21: find and name all of the ALU OPs.
 
 
 Current files:   

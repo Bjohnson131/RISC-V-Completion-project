@@ -2,6 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity reg32b is
+    generic (N : std_logic_vector(31 downto 0) := X"00000000");
 	port (
 		reg_in : in std_logic_vector(31 downto 0);
 		load, clock, clear : in std_logic;
@@ -10,10 +11,27 @@ entity reg32b is
 end reg32b;
 
 architecture description of reg32b is
-	signal internal_value : std_logic_vector(31 downto 0) := X"00000000";
-    attribute keep_hierarchy : string;
-    attribute keep_hierarchy of description : architecture is "yes";
+	signal internal_value : std_logic_vector(31 downto 0) := N;
 begin
+
+  reg_out <= internal_value;
+  
+  process (clock)
+  begin
+    if rising_edge(clock) then
+      if (clear = '1') then
+        -- drive all bits to N when reset.
+        internal_value <= N;
+      else
+        if (load = '1') then
+          internal_value <= reg_in;
+        else
+          internal_value <= internal_value;
+        end if;
+      end if;
+    end if;
+  end process;
+end description;
   -- Zeroes when clear is 1,
   -- Reg in when load signal is high
   -- otherwise, maintain value.
@@ -36,27 +54,3 @@ begin
   --    reg_out <= internal_value;
   --  end if;
   --end process;
-
-
-  process (clock)
-  begin
-    if rising_edge(clock) then
-
-      if (clear = '1') then
-        -- drive all bits to 0 using (others => '0')
-        internal_value <= (others => '0');
-      else
-        if (load = '1') then
-          internal_value <= reg_in;
-        else
-          -- OK to have internal value drive itself here inside clocked process
-          internal_value <= internal_value;
-        end if;
-      end if;
-    end if;
-  end process;
-
-
-  reg_out <= internal_value;
-
-end description;

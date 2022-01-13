@@ -14,16 +14,11 @@ entity progmem_interface is
 end entity progmem_interface;
 
 architecture behavioural of progmem_interface is
-
 	signal memory_address : std_logic_vector(31 downto 0) := X"00000000";
-
 begin		 
-	-- TODO: this currently outputs the address as its data. fix this.
-	address_acquirement : process (byte_address)
-	begin
-		memory_address <= std_logic_vector(shift_right(unsigned(byte_address), 2)); --Dividing by 4 since 32 = 4*8
-	end process;
 
+	-- TODO: this currently outputs the address as its data. fix this.
+	memory_address <= std_logic_vector(shift_right(unsigned(byte_address), 2)); --Dividing by 4 since 32 = 4*8
     process(clock)
     begin
     if (rising_edge(clock)) then

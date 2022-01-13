@@ -11,8 +11,8 @@ end reg4b;
 
 architecture description of reg4b is
   signal internal_value                   : std_logic_vector(3 downto 0) := "0000";
-  attribute keep_hierarchy                : string;
-  attribute keep_hierarchy of description : architecture is "yes";
+  attribute DONT_TOUCH                : string;
+  attribute DONT_TOUCH of description : architecture is "true";
 begin
 
 

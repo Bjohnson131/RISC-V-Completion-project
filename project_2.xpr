@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2021.1 (64-bit)              -->
+<!-- Product Version: Vivado v2021.2 (64-bit)              -->
 <!--                                                         -->
 <!-- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="55" Path="C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project/project_2.xpr">
+<Project Version="7" Minor="56" Path="C:/Users/Brice/Documents/GitHub/RISC-V-Completion-project/project_2.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="21fc0cb524634e54a0ff6ac130a39905"/>
@@ -12,21 +12,18 @@
     <Option Name="CompiledLibDirXSim" Val=""/>
     <Option Name="CompiledLibDirModelSim" Val="$PCACHEDIR/compile_simlib/modelsim"/>
     <Option Name="CompiledLibDirQuesta" Val="$PCACHEDIR/compile_simlib/questa"/>
-    <Option Name="CompiledLibDirIES" Val="$PCACHEDIR/compile_simlib/ies"/>
     <Option Name="CompiledLibDirXcelium" Val="$PCACHEDIR/compile_simlib/xcelium"/>
     <Option Name="CompiledLibDirVCS" Val="$PCACHEDIR/compile_simlib/vcs"/>
     <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
     <Option Name="SimulatorInstallDirModelSim" Val=""/>
     <Option Name="SimulatorInstallDirQuesta" Val=""/>
-    <Option Name="SimulatorInstallDirIES" Val=""/>
     <Option Name="SimulatorInstallDirXcelium" Val=""/>
     <Option Name="SimulatorInstallDirVCS" Val=""/>
     <Option Name="SimulatorInstallDirRiviera" Val=""/>
     <Option Name="SimulatorInstallDirActiveHdl" Val=""/>
     <Option Name="SimulatorGccInstallDirModelSim" Val=""/>
     <Option Name="SimulatorGccInstallDirQuesta" Val=""/>
-    <Option Name="SimulatorGccInstallDirIES" Val=""/>
     <Option Name="SimulatorGccInstallDirXcelium" Val=""/>
     <Option Name="SimulatorGccInstallDirVCS" Val=""/>
     <Option Name="SimulatorGccInstallDirRiviera" Val=""/>
@@ -34,7 +31,6 @@
     <Option Name="SimulatorVersionXsim" Val="2021.1"/>
     <Option Name="SimulatorVersionModelSim" Val="2020.4"/>
     <Option Name="SimulatorVersionQuesta" Val="2020.4"/>
-    <Option Name="SimulatorVersionIES" Val="15.20.083"/>
     <Option Name="SimulatorVersionXcelium" Val="20.09.006"/>
     <Option Name="SimulatorVersionVCS" Val="R-2020.12"/>
     <Option Name="SimulatorVersionRiviera" Val="2020.10"/>
@@ -42,14 +38,13 @@
     <Option Name="SimulatorGccVersionXsim" Val="6.2.0"/>
     <Option Name="SimulatorGccVersionModelSim" Val="5.3.0"/>
     <Option Name="SimulatorGccVersionQuesta" Val="5.3.0"/>
-    <Option Name="SimulatorGccVersionIES" Val="6.2.0"/>
     <Option Name="SimulatorGccVersionXcelium" Val="6.3"/>
     <Option Name="SimulatorGccVersionVCS" Val="6.2.0"/>
     <Option Name="SimulatorGccVersionRiviera" Val="6.2.0"/>
     <Option Name="SimulatorGccVersionActiveHdl" Val="6.2.0"/>
     <Option Name="TargetLanguage" Val="VHDL"/>
     <Option Name="SimulatorLanguage" Val="VHDL"/>
-    <Option Name="BoardPart" Val="xilinx.com:kv260:part0:1.1"/>
+    <Option Name="BoardPart" Val=""/>
     <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../AppData/Roaming/Xilinx/Vivado/2019.2/xhub/board_store"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
@@ -64,7 +59,7 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="kv260"/>
-    <Option Name="WTXSimLaunchSim" Val="0"/>
+    <Option Name="WTXSimLaunchSim" Val="117"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -94,6 +89,58 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/new/progmem_interface.vhd">
+        <FileInfo SFType="VHDL2008">
+          <Attr Name="Library" Val="riscv"/>
+          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/progmem_interface.vhd"/>
+          <Attr Name="ImportTime" Val="1622179641"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/Mux/mux_2_1.vhd">
+        <FileInfo SFType="VHDL2008">
+          <Attr Name="Library" Val="riscv"/>
+          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/Mux/mux_2_1.vhd"/>
+          <Attr Name="ImportTime" Val="1589851327"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/Register/reg32b.vhd">
+        <FileInfo SFType="VHDL2008">
+          <Attr Name="Library" Val="riscv"/>
+          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/Register/reg32b.vhd"/>
+          <Attr Name="ImportTime" Val="1622181193"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/program_counter.vhd">
+        <FileInfo SFType="VHDL2008">
+          <Attr Name="Library" Val="riscv"/>
+          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/program_counter.vhd"/>
+          <Attr Name="ImportTime" Val="1622181096"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/Stage/IF_ID_DIV.vhd">
+        <FileInfo SFType="VHDL2008">
+          <Attr Name="Library" Val="riscv"/>
+          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/Stage/IF_ID_DIV.vhd"/>
+          <Attr Name="ImportTime" Val="1589411042"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/FETCH_Module.vhd">
+        <FileInfo>
+          <Attr Name="Library" Val="riscv"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/new/ALU.vhd">
         <FileInfo SFType="VHDL2008">
           <Attr Name="Library" Val="riscv"/>
@@ -238,15 +285,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/Register/reg32b.vhd">
-        <FileInfo SFType="VHDL2008">
-          <Attr Name="Library" Val="riscv"/>
-          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/Register/reg32b.vhd"/>
-          <Attr Name="ImportTime" Val="1622181193"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/new/Stage/EX_MEM_DIV.vhd">
         <FileInfo SFType="VHDL2008">
           <Attr Name="Library" Val="riscv"/>
@@ -256,11 +294,9 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/Mux/mux_2_1.vhd">
+      <File Path="$PSRCDIR/sources_1/new/types.vhd">
         <FileInfo SFType="VHDL2008">
           <Attr Name="Library" Val="riscv"/>
-          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/Mux/mux_2_1.vhd"/>
-          <Attr Name="ImportTime" Val="1589851327"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -301,15 +337,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/Mux/mux_5_1.vhd">
-        <FileInfo SFType="VHDL2008">
-          <Attr Name="Library" Val="riscv"/>
-          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/Mux/mux_5_1.vhd"/>
-          <Attr Name="ImportTime" Val="1584060317"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/new/Mux/mux_3_1.vhd">
         <FileInfo SFType="VHDL2008">
           <Attr Name="Library" Val="riscv"/>
@@ -319,11 +346,11 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/Mux/mux_4_1.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/new/Mux/mux_5_1.vhd">
         <FileInfo SFType="VHDL2008">
           <Attr Name="Library" Val="riscv"/>
-          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/Mux/mux_4_1.vhd"/>
-          <Attr Name="ImportTime" Val="1603757300"/>
+          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/Mux/mux_5_1.vhd"/>
+          <Attr Name="ImportTime" Val="1584060317"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -342,6 +369,13 @@
           <Attr Name="Library" Val="riscv"/>
           <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/Register/reg4b.vhd"/>
           <Attr Name="ImportTime" Val="1589410400"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/Register/regmb.vhd">
+        <FileInfo SFType="VHDL2008">
+          <Attr Name="Library" Val="riscv"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -400,29 +434,9 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/Stage/IF_ID_DIV.vhd">
+      <File Path="$PSRCDIR/sources_1/new/Progmem_fibonacci.vhd">
         <FileInfo SFType="VHDL2008">
           <Attr Name="Library" Val="riscv"/>
-          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/Stage/IF_ID_DIV.vhd"/>
-          <Attr Name="ImportTime" Val="1589411042"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/progmem_interface.vhd">
-        <FileInfo SFType="VHDL2008">
-          <Attr Name="Library" Val="riscv"/>
-          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/progmem_interface.vhd"/>
-          <Attr Name="ImportTime" Val="1622179641"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/program_counter.vhd">
-        <FileInfo SFType="VHDL2008">
-          <Attr Name="Library" Val="riscv"/>
-          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/program_counter.vhd"/>
-          <Attr Name="ImportTime" Val="1622181096"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -513,6 +527,16 @@
           <Attr Name="Library" Val="riscv"/>
           <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/RISCV_Black_Box_Translator.vhd"/>
           <Attr Name="ImportTime" Val="1621991958"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/Mux/mux_4_1.vhd">
+        <FileInfo SFType="VHDL2008">
+          <Attr Name="Library" Val="riscv"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/Mux/mux_4_1.vhd"/>
+          <Attr Name="ImportTime" Val="1603757300"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -677,16 +701,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/microcontroller.vhd">
-        <FileInfo SFType="VHDL2008">
-          <Attr Name="Library" Val="riscv"/>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="A:/NewWorkspace/workspace/design1/src/sources_1/new/microcontroller.vhd"/>
-          <Attr Name="ImportTime" Val="1621991665"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/new/datapath.vhd">
         <FileInfo SFType="VHDL2008">
           <Attr Name="Library" Val="riscv"/>
@@ -707,25 +721,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/RISCV_DATA.vhd">
-        <FileInfo>
-          <Attr Name="Library" Val="riscv"/>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../git/project_2/project_2.srcs/sources_1/new/RISCV_DATA.vhd"/>
-          <Attr Name="ImportTime" Val="1626161010"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/archive_project_summary.txt"/>
-      <File Path="$PSRCDIR/sources_1/new/types.vhd">
-        <FileInfo SFType="VHDL2008">
-          <Attr Name="Library" Val="riscv"/>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="RISCV_Black_Box_Translator"/>
@@ -747,11 +743,42 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1" RelGenDir="$PGENDIR/sim_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sim_1/new/IF_ID_test.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/new/fib_fetch_test.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/new/ID_TEST.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/new/sim_head.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/ID_TEST_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="TEST_TOP_COUNTERS"/>
-        <Option Name="TopLib" Val="riscv"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
+        <Option Name="TopModule" Val="IF_ID_test"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SelectedSimModel" Val="rtl"/>
@@ -760,6 +787,8 @@
         <Option Name="PamSignalDriverFile" Val="xil_bypass_driver"/>
         <Option Name="PamPseudoTop" Val="pseudo_tb"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/ID_TEST_behav.wcfg"/>
+        <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
@@ -791,14 +820,34 @@
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xck26-sfvc784-2LV-c" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../git/project_2/project_2.srcs/utils_1/imports/synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
+        <Step Id="synth_design">
+          <Option Id="FlattenHierarchy">0</Option>
+          <Option Id="Assert">1</Option>
+        </Step>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xck26-sfvc784-2LV-c" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../git/project_2/project_2.srcs/utils_1/imports/impl_1">
+    <Run Id="synth_1_copy_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xck26-sfvc784-2LV-c" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../git/project_2/project_2.srcs/utils_1/imports/synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021" CtrlBit="true">
+        <ReportConfig DisplayName="synthesis_report" Name="synth_1_copy_1_synth_synthesis_report_0" Spec="" RunStep="synth_design">
+          <ReportConfigOption Name="dummy_option" Type="string"/>
+        </ReportConfig>
+        <ReportConfig DisplayName="Utilization - Synth Design" Name="synth_1_copy_1_synth_report_utilization_0" Spec="report_utilization" RunStep="synth_design" Version="1" Minor="0">
+          <ReportConfigOption Name="dummy_option" Type="string"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value=""/>
+        </ReportConfig>
+      </ReportStrategy>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xck26-sfvc784-2LV-c" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../git/project_2/project_2.srcs/utils_1/imports/impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -811,14 +860,13 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
   </Runs>
-  <Board>
-    <Jumpers/>
-  </Board>
+  <Board/>
   <DashboardSummary Version="1" Minor="0">
     <Dashboards>
       <Dashboard Name="default_dashboard">

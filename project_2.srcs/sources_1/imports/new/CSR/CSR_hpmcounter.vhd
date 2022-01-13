@@ -24,10 +24,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 library riscv;
 use riscv.CSR_TIMER_ARRAY;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
 entity CSR_hpmcounter is
     Port ( READ_ADDR_IN, WRITE_ADDR_IN : in STD_LOGIC_VECTOR (11 downto 0);
            clk,WRITE : in STD_LOGIC;
@@ -36,7 +32,7 @@ entity CSR_hpmcounter is
 end CSR_hpmcounter;
 
 architecture Behavioral of CSR_hpmcounter is
- signal sel_low_read, sel_high_read,sel_low_write, sel_high_write : std_logic_vector(4 downto 0) := "00000";
+ signal sel_low_read, sel_high_read, sel_low_write, sel_high_write : std_logic_vector(4 downto 0) := "00000";
  signal prev_addr,prev_addr_next : std_logic_vector(11 downto 0) := "000000000000";
  signal write_low, write_high, match_low_read, match_high_read, match_low_write, match_high_write: std_logic := '0';
  signal match_freeze_val: std_logic := '0';
@@ -55,17 +51,6 @@ match_freeze_val <=
 '1' when ((prev_addr xor "000010000000") = READ_ADDR_IN) else '0';
 
 freeze_val_next <= OUT_LOW when( match_low_read = '1' ) else OUT_HIGH;
-
-process(clk)
-begin
-    if(rising_edge(clk)) then
-        prev_addr_next <= READ_ADDR_IN;
-        prev_addr <= prev_addr_next;
-        freeze_val <= freeze_val_next;
-    end if;
-end process;
-
-
 
 with READ_ADDR_IN(11 downto 5) select
 match_low_read <= 
@@ -108,5 +93,15 @@ D_OUT_LOW => OUT_LOW,
 D_OUT_HIGH => OUT_HIGH,
 D_IN => D_IN
 );
+
+-- Set the 
+process(clk)
+begin
+    if(rising_edge(clk)) then
+        prev_addr <= prev_addr_next;
+        prev_addr_next <= READ_ADDR_IN;
+        freeze_val <= freeze_val_next;
+    end if;
+end process;
 
 end Behavioral;

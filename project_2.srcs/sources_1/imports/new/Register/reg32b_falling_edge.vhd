@@ -15,6 +15,12 @@ begin
 
 
   -- SR ---
+  -- Reg out driven outside of process
+  -- SR ---
+  reg_out <= internal_value;
+
+
+  -- SR ---
   -- not good practice to have additional signals in process sensitivity list
   -- in addition to clock.
   -- Either the process has clock and hence it is a synchronus process
@@ -37,7 +43,7 @@ begin
     -- it depends if the device has falling edge capable registers
     -- some do for eg DDR ram.
     -- SR ---
-    if falling_edge(clock) then
+    if rising_edge(clock) then
 
       if (clear = '1') then
         internal_value <= X"00000000";
@@ -51,10 +57,4 @@ begin
     end if;
 
   end process;
-
-
-  -- SR ---
-  -- Reg out driven outside of process
-  -- SR ---
-  reg_out <= internal_value;
 end description;

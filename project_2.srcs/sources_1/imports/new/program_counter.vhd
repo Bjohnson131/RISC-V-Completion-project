@@ -17,11 +17,14 @@ entity program_counter is
 end program_counter;
 
 architecture behavioral of program_counter is
-	signal internal_address : std_logic_vector (31 downto 0) := X"00000000";
+	signal internal_address : std_logic_vector (31 downto 0) := X"00010000";
 	signal halt_load : std_logic;
 begin
 	internal_mux : entity riscv.mux_2_1 port map(mux_sel, address_in_0, address_in_1, internal_address);
-	internal_register : entity riscv.reg32b port map(internal_address, halt_load, clock, clear, address_out);
+	
+	internal_register : entity riscv.reg32b 
+	generic map( N => X"00010000" )
+	port map(internal_address, halt_load, clock, clear, address_out);
 
     -- SR ---
     -- Synthesis Error: "next_address is not defined"

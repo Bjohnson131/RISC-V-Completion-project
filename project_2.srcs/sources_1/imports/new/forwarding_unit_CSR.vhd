@@ -48,8 +48,8 @@ end forwarding_unit_CSR;
 architecture structural of forwarding_unit_CSR is
 
 	signal internal_mux_0_control : std_logic_vector(1 downto 0) := "00";
-    attribute keep_hierarchy : string;
-    attribute keep_hierarchy of structural : architecture is "yes";
+    attribute DONT_TOUCH : string;
+    attribute DONT_TOUCH of structural : architecture is "true";
 
 begin		  	   
 	--forward_0 : process (reg_file_read_address_0_OUTE, reg_file_write_EX_MEM, reg_file_write_MEM_WB, reg_file_write_address_EX_MEM, reg_file_write_address_MEM_WB, mux_0_sel_EX_MEM, mux_0_sel_MEM_WB)

@@ -52,108 +52,33 @@ entity EX_MEM_DIV is
 
 end EX_MEM_DIV;
 architecture behavioral of EX_MEM_DIV is
-constant ones : std_logic := '1';
-attribute keep_hierarchy : string;
-attribute keep_hierarchy of behavioral : architecture is "yes";
-
-	--INTERNAL SIGNALS
-
-	--MEM control signals
-	signal data_format_input_signal : std_logic_vector(2 downto 0);
-	signal datamem_write_input_signal : std_logic;
-	signal jump_flag_input_signal : std_logic;
-
-	--WB control signals
-	signal mux0_sel_input_signal : std_logic_vector(1 downto 0);
-	signal reg_file_write_input_signal : std_logic;
-	signal reg_file_write_address_input_signal : std_logic_vector(4 downto 0);
-	signal CSR_file_write_address_input_signal : std_logic_vector(11 downto 0);
-	signal CSR_file_write_input_signal : std_logic;
-
-	--Data
-	signal ALU_output_input_signal : std_logic_vector(31 downto 0);
-	signal register_file_output_1_input_signal : std_logic_vector(31 downto 0);
-	signal ALU_branch_response_input_signal : std_logic;
-	signal instruction_address_input_signal : std_logic_vector(31 downto 0);
-
-	--MEM control signals
-	signal data_format_output_signal : std_logic_vector(2 downto 0);
-	signal datamem_write_output_signal : std_logic;
-	signal jump_flag_output_signal : std_logic;
-
-	--WB control signals
-	signal mux0_sel_output_signal : std_logic_vector(1 downto 0);
-	signal reg_file_write_output_signal : std_logic;
-	signal reg_file_write_address_output_signal : std_logic_vector(4 downto 0);
-	signal CSR_file_write_address_output_signal : std_logic_vector(11 downto 0);
-	signal CSR_file_write_output_signal : std_logic;
-
-	--Data
-	signal ALU_output_output_signal : std_logic_vector(31 downto 0);
-	signal register_file_output_1_output_signal : std_logic_vector(31 downto 0);
-	signal ALU_branch_response_output_signal : std_logic;
-	signal instruction_address_output_signal : std_logic_vector(31 downto 0);
-
+	constant ones : std_logic := '1';
+	attribute dont_touch : string;
+	attribute dont_touch of behavioral : architecture is "true";
 begin
-
 	--INTERNAL REGISTERS
 
 	--MEM control signals
-	data_format_reg : entity riscv.reg3b port map(data_format_input_signal, ones, clock, clear, data_format_output_signal);
-	datamem_write_reg : entity riscv.reg1b port map(datamem_write_input_signal, ones, clock, clear, datamem_write_output_signal);
-	jump_flag_reg : entity riscv.reg1b port map(jump_flag_input_signal, ones, clock, clear, jump_flag_output_signal);
+	data_format_reg : entity riscv.reg3b port map(data_format_in, ones, clock, clear, data_format_out);
+	datamem_write_reg : entity riscv.reg1b port map(datamem_write_in, ones, clock, clear, datamem_write_out);
+	jump_flag_reg : entity riscv.reg1b port map(jump_flag_in, ones, clock, clear, jump_flag_out);
 
 	--WB control signals
-	mux0_sel_reg : entity riscv.reg2b port map(mux0_sel_input_signal, ones, clock, clear, mux0_sel_output_signal);
-	reg_file_write_reg : entity riscv.reg1b port map(reg_file_write_input_signal, ones, clock, clear, reg_file_write_output_signal);
-	reg_file_write_address_reg : entity riscv.reg5b port map(reg_file_write_address_input_signal, ones, clock, clear, reg_file_write_address_output_signal);
-	csr_file_write_address_reg : entity riscv.reg12b port map(CSR_file_write_address_input_signal, ones, clock, clear, CSR_file_write_address_output_signal);
-	csr_file_write_reg : entity riscv.reg1b port map(CSR_file_write_input_signal, ones, clock, clear, CSR_file_write_output_signal);
-
+	mux0_sel_reg : entity riscv.reg2b port map(mux0_sel_in, ones, clock, clear, mux0_sel_out);
+	reg_file_write_reg : entity riscv.reg1b port map(reg_file_write_in, ones, clock, clear, reg_file_write_out);
+	reg_file_write_address_reg : entity riscv.reg5b port map(reg_file_write_address_in, ones, clock, clear, reg_file_write_address_out);
+	csr_file_write_reg : entity riscv.reg1b port map(CSR_file_write_in, ones, clock, clear, CSR_file_write_out);
+	csr_file_write_address_reg : entity riscv.reg12b port map(CSR_file_write_address_in, ones, clock, clear, CSR_file_write_address_out);
+	
 	--Data
-	ALU_output_reg : entity riscv.reg32b port map(ALU_output_input_signal, ones, clock, clear, ALU_output_output_signal);
-	register_file_output_1_reg : entity riscv.reg32b port map(register_file_output_1_input_signal, ones, clock, clear, register_file_output_1_output_signal);
-	ALU_branch_respose_reg : entity riscv.reg1b port map(ALU_branch_response_input_signal, ones, clock, clear, ALU_branch_response_output_signal);
-	instruction_address_reg : entity riscv.reg32b port map(instruction_address_input_signal, ones, clock, clear, instruction_address_output_signal);
-
-	--WIRING INPUT PORTS
-
-	--MEM control signals
-	data_format_input_signal <= data_format_in;
-	datamem_write_input_signal <= datamem_write_in;
-	jump_flag_input_signal <= jump_flag_in;
-
-	--WB control signals
-	mux0_sel_input_signal <= mux0_sel_in;
-	reg_file_write_input_signal <= reg_file_write_in;
-	reg_file_write_address_input_signal <= reg_file_write_address_in;
-	CSR_file_write_input_signal <= CSR_file_write_in;
-	CSR_file_write_address_input_signal <= CSR_file_write_address_in;
-
-	--Data
-	ALU_output_input_signal <= ALU_output_in;
-	register_file_output_1_input_signal <= register_file_output_1_in;
-	ALU_branch_response_input_signal <= ALU_branch_response_in;
-	instruction_address_input_signal <= instruction_address_in;
-
-	--WIRING OUTPUT PORTS
-
-	--MEM control signals
-	data_format_out <= data_format_output_signal;
-	datamem_write_out <= datamem_write_output_signal;
-	jump_flag_out <= jump_flag_output_signal;
-
-	--WB control signals
-	mux0_sel_out <= mux0_sel_output_signal;
-	reg_file_write_out <= reg_file_write_output_signal;
-	reg_file_write_address_out <= reg_file_write_address_output_signal;
-	CSR_file_write_out <= CSR_file_write_output_signal;
-	CSR_file_write_address_out <= CSR_file_write_address_output_signal;
-
-	--Data
-	ALU_output_out <= ALU_output_output_signal;
-	register_file_output_1_out <= register_file_output_1_output_signal;
-	ALU_branch_response_out <= ALU_branch_response_output_signal;
-	instruction_address_out <= instruction_address_output_signal;
-
+	ALU_output_reg : entity riscv.reg32b port map(
+	reg_in => ALU_output_in, 
+	load  => ones, 
+	clock => clock, 
+	clear => clear,
+	reg_out => ALU_output_out);
+	
+	register_file_output_1_reg : entity riscv.reg32b port map(register_file_output_1_in, ones, clock, clear, register_file_output_1_out);
+	ALU_branch_respose_reg : entity riscv.reg1b port map(ALU_branch_response_in, ones, clock, clear, ALU_branch_response_out);
+	instruction_address_reg : entity riscv.reg32b port map(instruction_address_in, ones, clock, clear, instruction_address_out);
 end behavioral;

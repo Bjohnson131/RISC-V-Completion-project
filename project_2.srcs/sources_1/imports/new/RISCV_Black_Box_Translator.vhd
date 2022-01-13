@@ -37,9 +37,8 @@ architecture Behavioral of RISCV_Black_Box_Translator is
 
 signal reset : std_logic :='0';
 signal acumulator: unsigned(63 downto 0);
-    signal debug_info: std_logic_vector(447 downto 0);
+signal debug_info: std_logic_vector(447 downto 0);
 signal accreset: std_logic;
-
 begin
 
 

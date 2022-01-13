@@ -25,8 +25,8 @@ end IF_ID_DIV;
 
 architecture behavioral of IF_ID_DIV is
 constant ones : std_logic := '1';
-attribute keep_hierarchy : string;
-attribute keep_hierarchy of behavioral : architecture is "yes";
+attribute DONT_TOUCH : string;
+attribute DONT_TOUCH of behavioral : architecture is "true";
 
 begin
 

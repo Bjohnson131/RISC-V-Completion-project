@@ -43,8 +43,8 @@ end MEM_WB_DIV;
 
 architecture behavioral of MEM_WB_DIV is
 constant ones : std_logic := '1';
-attribute keep_hierarchy : string;
-attribute keep_hierarchy of behavioral : architecture is "yes";
+attribute DONT_TOUCH : string;
+attribute DONT_TOUCH of behavioral : architecture is "true";
 
 	--INTERNAL SIGNALS
 

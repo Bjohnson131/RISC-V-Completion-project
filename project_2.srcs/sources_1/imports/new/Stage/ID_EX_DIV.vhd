@@ -14,9 +14,8 @@ entity ID_EX_DIV is
 		ALU_operation_in : in std_logic_vector(3 downto 0);
 		ALU_branch_in : in std_logic;
 		ALU_branch_control_in : in std_logic_vector(2 downto 0);
-		mux1_sel_in : in std_logic_vector(1 downto 0);
+		mux1_sel_in : in types.MEMORY_MUX_SEL;
 		JTU_mux_sel_in : in std_logic;
-		
 
 		--MEM control signals
 		data_format_in : in std_logic_vector(2 downto 0);
@@ -47,7 +46,7 @@ entity ID_EX_DIV is
 		ALU_operation_out : out std_logic_vector(3 downto 0);
 		ALU_branch_out : out std_logic;
 		ALU_branch_control_out : out std_logic_vector(2 downto 0);
-		mux1_sel_out : out std_logic_vector(1 downto 0);
+		mux1_sel_out : out types.MEMORY_MUX_SEL;
 		JTU_mux_sel_out : out std_logic;
 
 		--MEM control signals
@@ -79,15 +78,14 @@ end ID_EX_DIV;
 
 architecture behavioral of ID_EX_DIV is
 constant ones : std_logic := '1';
-attribute keep_hierarchy : string;
-attribute keep_hierarchy of behavioral : architecture is "yes";
+attribute DONT_TOUCH : string;
+attribute DONT_TOUCH of behavioral : architecture is "true";
 	--INTERNAL SIGNALS
 
 	--EX control signals
 	signal ALU_operation_input_signal : std_logic_vector(3 downto 0);
 	signal ALU_branch_input_signal : std_logic;
 	signal ALU_branch_control_input_signal : std_logic_vector(2 downto 0);
-	signal mux1_sel_input_signal : std_logic_vector(1 downto 0);
 	signal JTU_mux_sel_input_signal : std_logic;
 
 	--MEM control signals
@@ -117,7 +115,7 @@ attribute keep_hierarchy of behavioral : architecture is "yes";
 	signal ALU_operation_output_signal : std_logic_vector(3 downto 0);
 	signal ALU_branch_output_signal : std_logic;
 	signal ALU_branch_control_output_signal : std_logic_vector(2 downto 0);
-	signal mux1_sel_output_signal : std_logic_vector(1 downto 0);
+	signal mux1_sel_output_signal : types.MEMORY_MUX_SEL;
 	signal JTU_mux_sel_output_signal : std_logic;
 
 	--MEM control signals
@@ -151,7 +149,7 @@ begin
 	ALU_operation_reg : entity riscv.reg4b port map(ALU_operation_input_signal, ones, clock, clear, ALU_operation_output_signal);
 	ALU_branch_reg : entity riscv.reg1b port map(ALU_branch_input_signal, ones, clock, clear, ALU_branch_output_signal);
 	ALU_branch_control_reg : entity riscv.reg3b port map(ALU_branch_control_input_signal, ones, clock, clear, ALU_branch_control_output_signal);
-	mux1_sel_reg : entity riscv.reg2b port map(mux1_sel_input_signal, ones, clock, clear, mux1_sel_output_signal);
+	mux1_sel_reg : entity riscv.regmb port map(mux1_sel_in, ones, clock, clear, mux1_sel_output_signal);
 	JTU_mux_sel_reg : entity riscv.reg1b port map(JTU_mux_sel_input_signal, ones, clock, clear, JTU_mux_sel_output_signal);
 
 	--MEM control signals
@@ -183,7 +181,6 @@ begin
 	ALU_operation_input_signal <= ALU_operation_in;
 	ALU_branch_input_signal <= ALU_branch_in;
 	ALU_branch_control_input_signal <= ALU_branch_control_in;
-	mux1_sel_input_signal <= mux1_sel_in;
 	JTU_mux_sel_input_signal <= JTU_mux_sel_in;
 
 	--MEM control signals

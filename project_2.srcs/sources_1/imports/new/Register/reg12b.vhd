@@ -14,8 +14,8 @@ architecture description of reg12b is
     attribute extract_enable : string;
     attribute extract_reset of reg_out: signal is "no";
     attribute extract_enable of reg_out: signal is "no";
-    attribute keep_hierarchy : string;
-    attribute keep_hierarchy of description : architecture is "yes";
+    attribute DONT_TOUCH : string;
+    attribute DONT_TOUCH of description : architecture is "true";
 begin
 
   -- SR ---

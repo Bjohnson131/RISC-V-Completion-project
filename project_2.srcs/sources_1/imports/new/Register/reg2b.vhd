@@ -11,8 +11,12 @@ end reg2b;
 
 architecture description of reg2b is
 	signal internal_value,internal_value_next : std_logic_vector(1 downto 0) := "00";
-    attribute keep_hierarchy : string;
-    attribute keep_hierarchy of description : architecture is "yes";
+    attribute extract_reset : string;
+    attribute extract_enable : string;
+    attribute extract_reset of reg_out: signal is "no";
+    attribute extract_enable of reg_out: signal is "no";
+    attribute DONT_TOUCH : string;
+    attribute DONT_TOUCH of description : architecture is "true";
 begin
 internal_value_next <= 
 "00" when (clear = '1') else
